@@ -1,0 +1,26 @@
+CC	= gcc
+SRCS	= hello.c
+OBJS	= hello.o
+TARGET	= hello
+CFLAGS	= -g -O
+RM	= rm -f
+
+all	:	$(TARGET)
+
+.c.o	:
+	$(CC) $(CFLAGS) -c $(SRCS)
+
+$(TARGET)	:	$(OBJS)
+	$(CC) $(CFLAGS) -o $(TARGET) $(OBJS)
+
+clean	:
+	$(RM) $(OBJS)
+
+clean_target	:
+	$(RM) $(TARGET)
+
+clean_all	:
+	$(RM) $(OBJS) $(TARGET)
+
+run	:	$(TARGET)
+	./$(TARGET)

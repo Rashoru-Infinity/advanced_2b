@@ -1,0 +1,8 @@
+>push 100
+>push 20
+>push 30
+>pop
+ 30
+>show
+ 20
+100
