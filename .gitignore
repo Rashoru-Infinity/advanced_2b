@@ -4,3 +4,6 @@ stack
 exer3
 list
 automaton
+expression
+*.a
+*.*.swp
