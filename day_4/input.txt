@@ -1,0 +1,19 @@
+double pi = 3.141592;
+double e = 2.71828;
+e *= pi + e;
+int i2 = 2;
+int i1 = i2 / i2;
+
+int TO_UPPER_CASE = -32;
+
+while (true) {
+	break;
+}
+if (e > pi) {
+	return false;
+} else {
+	goto dest;
+}
+
+dest:
+	return true;

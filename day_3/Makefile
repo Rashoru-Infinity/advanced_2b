@@ -15,7 +15,7 @@ GDB	= gdb
 all	:	$(TARGET)
 
 .c.o	:
-#	$(CC) $(CFLAGS) $(DEFINE) $(INC) -c $< -o $@
+#	$(CC) $(CFLAGS)  $(INC) -c $< -o $@
 	$(CC) $(CFLAGS) -D CALC -D TOKENIZER_TEST $(DEFINE) $(INC) -c $< -o $@
 
 $(ARCHIVE)	:
