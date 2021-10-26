@@ -78,7 +78,7 @@ extern YYSTYPE yylval;
 "=" return MOV;
 "&&" return CONDAND;
 "||" return CONDOR;
-"!"	return NOT;
+"!" return NOT;
 "<" return LESS;
 ">" return GRATE;
 "<=" return LESSOREQ;
