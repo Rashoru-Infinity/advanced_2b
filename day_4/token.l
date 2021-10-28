@@ -55,45 +55,124 @@ extern YYSTYPE yylval;
 
 %}
 %%
-"int" return INTEGER;
-"double" return DOUBLE;
-"if" return IF;
-"else" return ELSE;
-"elsif" return ELSIF;
-"while" return WHILE;
-"for" return FOR;
-"return" return RETURN;
-"break" return BREAK;
-"continue" return CONTINUE;
-"true" return TRUE;
-"false" return FALSE;
-"boolean" return BOOLEAN;
-"+" return ADD;
-"-" return SUB;
-"*" return MUL;
-"/" return DIV;
-"%" return MOD;
-"&" return AND;
-"|" return OR;
-"=" return MOV;
-"&&" return CONDAND;
-"||" return CONDOR;
-"!" return NOT;
-"<" return LESS;
-">" return GRATE;
-"<=" return LESSOREQ;
-">=" return GRATEOREQ;
-"+=" return ADDMOV;
-"-=" return SUBMOV;
-"*=" return MULMOV;
-"/=" return DIVMOV;
-"(" return RRNDBKT;
-")" return LRNDBKT;
-"{" return RCLYBKT;
-"}" return LCLYBKT;
-"," return COMMA;
-";" return SCLN;
-":" return CLN;
+"int" {
+	return INTEGER;
+}
+"double" {
+	return DOUBLE;
+}
+"if" {
+	return IF;
+}
+"else" {
+	return ELSE;
+}
+"elsif" {
+	return ELSIF;
+}
+"while" {
+	return WHILE;
+}
+"for" {
+	return FOR;
+}
+"return" {
+	return RETURN;
+}
+"break" {
+	return BREAK;
+}
+"continue" {
+	return CONTINUE;
+}
+"true" {
+	return TRUE;
+}
+"false" {
+	return FALSE;
+}
+"boolean" {
+	return BOOLEAN;
+}
+"+" {
+	return ADD;
+}
+"-" {
+	return SUB;
+}
+"*" {
+	return MUL;
+}
+"/" {
+	return DIV;
+}
+"%" {
+	return MOD;
+}
+"&" {
+	return AND;
+}
+"|" {
+	return OR;
+}
+"=" {
+	return MOV;
+}
+"&&" {
+	return CONDAND;
+}
+"||" {
+	return CONDOR;
+}
+"!" {
+	return NOT;
+}
+"<" {
+	return LESS;
+}
+">" {
+	return GRATE;
+}
+"<=" {
+	return LESSOREQ;
+}
+">=" {
+	return GRATEOREQ;
+}
+"+=" {
+	return ADDMOV;
+}
+"-=" {
+	return SUBMOV;
+}
+"*=" {
+	return MULMOV;
+}
+"/=" {
+	return DIVMOV;
+}
+"(" {
+	return RRNDBKT;
+}
+")" {
+	return LRNDBKT;
+}
+"{" {
+	return RCLYBKT;
+}
+"}" {
+	return LCLYBKT;
+}
+"," {
+	return COMMA;
+}
+";" {
+	return SCLN;
+}
+":" {
+	printf("yytext : %s\n", yytext);
+	return CLN;
+}
 ([1-9][0-9]*)|0|(-[1-9][0-9])|-0 {
 	int tmp;
 	sscanf(yytext, "%d", &tmp);
@@ -106,6 +185,8 @@ extern YYSTYPE yylval;
 	yylval.double_value = tmp;
 	return DOUBLE_LITERAL;
 }
-(([a-z]|[A-Z])([a-z]|[A-Z]|[0-9]|_)*) {return IDENTIFIER;}
+(([a-z]|[A-Z])([a-z]|[A-Z]|[0-9]|_)*) {
+	printf("yytext : %s\n", yytext);
+	return IDENTIFIER;}
 [ \t\n\v\f\r] ;
 %%
