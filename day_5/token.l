@@ -1,6 +1,6 @@
 %{
 #include <stdio.h>
-#include "token.h"
+#include "syntax.h"
 #include "y.tab.h"
 /*
 enum yytokentype {

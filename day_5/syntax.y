@@ -1,7 +1,7 @@
 %{
 #include <stdio.h>
 #include <stdlib.h>
-#include "token.h"
+#include "syntax.h"
 %}
 %union {
     int iv;
