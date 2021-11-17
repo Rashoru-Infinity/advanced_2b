@@ -2,3 +2,4 @@ a = 1;
 a += 2;
 a -= 2;
 true || true && false;
+a_a = a;
