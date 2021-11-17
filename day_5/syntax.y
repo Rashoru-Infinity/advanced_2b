@@ -34,13 +34,16 @@
 %token CONDOR
 %token NOT
 %token LESS
-%token GRATE
+%token GREAT
 %token LESSOREQ
-%token GRATEOREQ
+%token GREATOREQ
+%token EQ
+%token NOTEQ
 %token ADDMOV
 %token SUBMOV
 %token MULMOV
 %token DIVMOV
+%token MODMOV
 %token RRNDBKT
 %token LRNDBKT
 %token RCLYBKT
@@ -54,7 +57,7 @@ translation_unit
 	: statement
 	;
 statement
-	: IDENTIFIER RRNDBKT LRNDBKT SCLN
+	: IDENTIFIER LRNDBKT RRNDBKT SCLN
 	;
 
 /*

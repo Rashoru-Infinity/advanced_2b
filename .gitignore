@@ -7,3 +7,9 @@ automaton
 expression
 *.a
 *.*.swp
+syntax
+tokenizer
+lex.yy.*
+y.tab.*
+y.output
+keyword.c

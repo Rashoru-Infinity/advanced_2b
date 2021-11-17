@@ -92,6 +92,8 @@ extern YYSTYPE yylval;
 "*=" return MULMOV;
 "/=" return DIVMOV;
 "%=" return MODMOV;
+"++" return INCREMENT;
+"--" return DECREMENT;
 ")" return RRNDBKT;
 "(" return LRNDBKT;
 "}" return RCLYBKT;
@@ -111,6 +113,6 @@ extern YYSTYPE yylval;
 	yylval.dv = tmp;
 	return DOUBLE_LITERAL;
 }
-(([a-z]|[A-Z])([a-z]|[A-Z]|[0-9]|_)*) {return IDENTIFIER;}
+((_|[a-z]|[A-Z])([a-z]|[A-Z]|[0-9]|_)*) {return IDENTIFIER;}
 [ \t\n\v\f\r] ;
 %%
